@@ -1,5 +1,5 @@
 
-package com.yeleman.fondasms.pack01;
+package com.eazita.smsgateway.pack01;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;

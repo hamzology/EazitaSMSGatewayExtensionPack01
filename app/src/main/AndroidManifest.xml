@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yeleman.fondasms.pack01">
+    package="com.eazita.smsgateway.pack01">
 
     <uses-permission android:name="android.permission.SEND_SMS"/>
 
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.yeleman.fondasms.pack01.MainActivity">
+        <activity android:name="com.eazita.smsgateway.pack01.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,15 +18,15 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="com.yeleman.fondasms.pack01.QueryExpansionPacksReceiver" >
+        <receiver android:name="com.eazita.smsgateway.pack01.QueryExpansionPacksReceiver" >
             <intent-filter android:priority="1">
-                <action android:name="com.yeleman.fondasms.QUERY_EXPANSION_PACKS" />
+                <action android:name="com.eazita.smsgateway.QUERY_EXPANSION_PACKS" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.yeleman.fondasms.pack01.OutgoingSmsReceiver">
+        <receiver android:name="com.eazita.smsgateway.pack01.OutgoingSmsReceiver">
             <intent-filter>
-                <action android:name="com.yeleman.fondasms.pack01.OUTGOING_SMS"/>
+                <action android:name="com.eazita.smsgateway.pack01.OUTGOING_SMS"/>
                 <data android:scheme="content"/>
             </intent-filter>
         </receiver>

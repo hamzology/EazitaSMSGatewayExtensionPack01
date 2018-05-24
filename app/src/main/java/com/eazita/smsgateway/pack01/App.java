@@ -1,10 +1,10 @@
-package com.yeleman.fondasms.pack01;
+package com.eazita.smsgateway.pack01;
 
 
 public class App
 {
     public static final String TAG = "RENO";
-    public static final String QUERY_EXPANSION_PACKS_INTENT = "com.yeleman.fondasms.QUERY_EXPANSION_PACKS";
+    public static final String QUERY_EXPANSION_PACKS_INTENT = "com.eazita.smsgateway.QUERY_EXPANSION_PACKS";
     public static final String QUERY_EXPANSION_PACKS_EXTRA_PACKAGES = "packages";
 
     public static final String OUTGOING_SMS_INTENT_SUFFIX = ".OUTGOING_SMS";
@@ -13,8 +13,8 @@ public class App
     public static final String OUTGOING_SMS_EXTRA_SERVERID = "serverid";
     public static final String OUTGOING_SMS_EXTRA_DELIVERY_REPORT = "delivery";
 
-    public static final String MESSAGE_STATUS_INTENT = "com.yeleman.fondasms.MESSAGE_STATUS";
-    public static final String MESSAGE_DELIVERY_INTENT = "com.yeleman.fondasms.MESSAGE_DELIVERY";
+    public static final String MESSAGE_STATUS_INTENT = "com.eazita.smsgateway.MESSAGE_STATUS";
+    public static final String MESSAGE_DELIVERY_INTENT = "com.eazita.smsgateway.MESSAGE_DELIVERY";
 
     public static final String STATUS_EXTRA_INDEX = "status";
     public static final String STATUS_EXTRA_NUM_PARTS = "num_parts";
