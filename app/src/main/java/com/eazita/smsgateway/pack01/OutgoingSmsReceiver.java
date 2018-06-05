@@ -5,7 +5,6 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.telephony.SmsManager;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -13,6 +12,7 @@ import java.util.ArrayList;
 
 public class OutgoingSmsReceiver extends BroadcastReceiver {
     public static final String TAG = OutgoingSmsReceiver.class.getSimpleName();
+
 
     @Override
     public void onReceive(Context context, Intent intent)
@@ -22,16 +22,18 @@ public class OutgoingSmsReceiver extends BroadcastReceiver {
             return;
         }
 
-        Toast.makeText(context, context.getPackageName() + " received SMS request", Toast.LENGTH_SHORT).show();
-
         //Log.d(TAG, context.getPackageName() + " received SMS request");
 
         String to = intent.getStringExtra(App.OUTGOING_SMS_EXTRA_TO);
+        String smssim = intent.getStringExtra(App.OUTGOING_SMS_EXTRA_SIM);
+
+        Toast.makeText(context, context.getPackageName() + " received SMS request on sim "+smssim, Toast.LENGTH_SHORT).show();
+
         ArrayList<String> bodyParts = intent.getStringArrayListExtra(App.OUTGOING_SMS_EXTRA_BODY);
         String serverId = intent.getStringExtra(App.OUTGOING_SMS_EXTRA_SERVERID);
         boolean deliveryReport = intent.getBooleanExtra(App.OUTGOING_SMS_EXTRA_DELIVERY_REPORT, false);
 
-        SmsManager smgr = SmsManager.getDefault();
+        //SmsManager smgr = SmsManager.getDefault();
 
         ArrayList<PendingIntent> sentIntents = new ArrayList<PendingIntent>();
         ArrayList<PendingIntent> deliveryIntents = null;
@@ -70,6 +72,7 @@ public class OutgoingSmsReceiver extends BroadcastReceiver {
             }
         }
 
-        smgr.sendMultipartTextMessage(to, null, bodyParts, sentIntents, deliveryIntents);
+        SimUtil.sendMultipartTextSMS(context, Integer.parseInt(smssim), to, null, bodyParts, sentIntents, deliveryIntents);
+        //smgr.sendMultipartTextMessage(to, null, bodyParts, sentIntents, deliveryIntents);
     }
 }

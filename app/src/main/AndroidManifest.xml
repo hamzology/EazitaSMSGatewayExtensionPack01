@@ -26,7 +26,7 @@
 
         <receiver android:name="com.eazita.smsgateway.pack01.OutgoingSmsReceiver">
             <intent-filter>
-                <action android:name="com.eazita.smsgateway.pack01.OUTGOING_SMS"/>
+                <action android:name="com.eazita.smsgateway.pack06.OUTGOING_SMS"/>
                 <data android:scheme="content"/>
             </intent-filter>
         </receiver>
